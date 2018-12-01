@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour {
 
 
     Vector2 targetVelocity; //this is the velocity we want to have
-    Vector2 facing;
 
 
     private SpriteRenderer spriteRenderer;
@@ -37,21 +36,20 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         ParseInput();
 
-        Vector2 direction = targetVelocity;
-        direction.Normalize();
+        LookAtMouse();
 
-        if (Mathf.Abs(direction.magnitude) > 0)
-        {
-            facing = direction; //make sure that we always look into a direction
-        }
 
 
         if (Input.GetButtonDown("Fire1"))
         {
-            GameObject instance = Instantiate(projectile, rigidbody.position+(facing * 0.7f), new Quaternion());
+            Vector2 targetForward = transform.rotation * Vector2.right;
+
+            GameObject instance = Instantiate(projectile, rigidbody.position+(targetForward * 0.7f), new Quaternion());
             Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
 
-            projrb2d.AddForce(facing * projectileSpeed);
+
+
+            projrb2d.AddForce(targetForward * projectileSpeed);
         }
     }
 
@@ -79,5 +77,20 @@ public class PlayerController : MonoBehaviour {
 
 
         targetVelocity = move*speed;
+
+    }
+
+    void LookAtMouse()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = 5.23f;
+
+        Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+        mousePos.x = mousePos.x - objectPos.x;
+        mousePos.y = mousePos.y - objectPos.y;
+
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
     }
 }

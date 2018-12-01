@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58885074472537488}
   - component: {fileID: 50817428961641902}
   - component: {fileID: 114427796479978684}
+  - component: {fileID: 114672022193638008}
   m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -159,6 +160,18 @@ MonoBehaviour:
   damage: 10
   lifetime: 50
   maxBounceCounter: 4
+--- !u!114 &114672022193638008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1397009729803524}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7dd2ddbc9660a42bc4d17f35362e29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PPU: 32
 --- !u!212 &212950029087179288
 SpriteRenderer:
   m_ObjectHideFlags: 1
