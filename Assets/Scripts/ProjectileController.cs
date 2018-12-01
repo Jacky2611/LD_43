@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
 
-
+    public float damage = 10;
     public float lifetime = 50f;
     public int maxBounceCounter=4;
+
     private int bounceCounter;
 
 
@@ -27,6 +28,14 @@ public class ProjectileController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+
+        LivingEntity le = collision.gameObject.GetComponent<LivingEntity>();
+        if (le != null)
+        {
+            le.TakeDamage(this.damage);
+            Destroy(gameObject);
+        }
+
         /*
         foreach (ContactPoint contact in collision.contacts)
         {

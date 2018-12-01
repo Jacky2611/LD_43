@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 
 
     Vector2 targetVelocity; //this is the velocity we want to have
-
+    Vector2 facing;
 
 
     private SpriteRenderer spriteRenderer;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization this objects
     private void Awake()
     {
+        facing = new Vector2(0,1);
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -36,16 +37,21 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         ParseInput();
 
+        Vector2 direction = targetVelocity;
+        direction.Normalize();
+
+        if (Mathf.Abs(direction.magnitude) > 0)
+        {
+            facing = direction; //make sure that we always look into a direction
+        }
+
+
         if (Input.GetButtonDown("Fire1"))
         {
-            Vector2 direction = targetVelocity;
-            direction.Normalize();
-
-
-            GameObject instance = Instantiate(projectile, rigidbody.position+(direction*0.5f), new Quaternion());
+            GameObject instance = Instantiate(projectile, rigidbody.position+(facing * 0.7f), new Quaternion());
             Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
 
-            projrb2d.AddForce(direction*projectileSpeed);
+            projrb2d.AddForce(facing * projectileSpeed);
         }
     }
 
