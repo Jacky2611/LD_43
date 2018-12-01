@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour {
     public float speed = 2f;
 
 
+    public GameObject projectile;
+    public float projectileSpeed=150;
+
+
     Vector2 targetVelocity; //this is the velocity we want to have
 
 
@@ -31,6 +35,18 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ParseInput();
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Vector2 direction = targetVelocity;
+            direction.Normalize();
+
+
+            GameObject instance = Instantiate(projectile, rigidbody.position+(direction*0.5f), new Quaternion());
+            Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
+
+            projrb2d.AddForce(direction*projectileSpeed);
+        }
     }
 
 
