@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization this objects
     private void Awake()
     {
-        facing = new Vector2(0,1);
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
