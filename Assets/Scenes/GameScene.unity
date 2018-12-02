@@ -5740,10 +5740,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2990d95e30293c428d91f1af6c4b37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splatterDeath: []
-  minDeathBlood: 2
-  maxDeathBlood: 5
-  splatterHurt: []
+  splatterDeath:
+  - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
+  - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
+  - {fileID: 1456363319293660, guid: 4fc108818a4ada644b117adb5afa745f, type: 2}
+  splatterDeathDistance: 1
+  minDeathBlood: 4
+  maxDeathBlood: 6
+  splatterHurt:
+  - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
+  - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
+  - {fileID: 1456363319293660, guid: 4fc108818a4ada644b117adb5afa745f, type: 2}
+  splatterHurtDistance: 1
   minHurtBlood: 2
   maxHurtBlood: 5
 --- !u!1 &2026154886
