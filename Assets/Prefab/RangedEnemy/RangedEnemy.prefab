@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSound: {fileID: 8300000, guid: 3994d746edf748a49a2fbed47884824d, type: 3}
-  projectile: {fileID: 1397009729803524, guid: 0c95999f9042b474586a11ede0200a16, type: 2}
+  projectile: {fileID: 1693541318650328, guid: 78142c5ed8c2b214c845326209716396, type: 2}
   projectileSpeed: 140
   movementSpeed: 1.6
   nextWaypointDistance: 2

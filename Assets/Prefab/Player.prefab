@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2990d95e30293c428d91f1af6c4b37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifetime: 100
   splatterDeath:
   - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
   - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3754e08c28db2b468018d407177ccc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   shootSound: {fileID: 8300000, guid: 56f3f6aef41039544a3c0a7fe2f44409, type: 3}
   projectile: {fileID: 1397009729803524, guid: d9311bcf0c8e61249ac8a0d5a293ac23, type: 2}
   projectileSpeed: 250
