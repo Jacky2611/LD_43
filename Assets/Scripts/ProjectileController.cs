@@ -7,6 +7,7 @@ public class ProjectileController : MonoBehaviour {
     public float damage = 10;
     public float lifetime = 50f;
     public int maxBounceCounter=4;
+	public float power=100f;
 
     private int bounceCounter;
 	public GameObject effect;
@@ -26,13 +27,17 @@ public class ProjectileController : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        LivingEntity le = collision.gameObject.GetComponent<LivingEntity>();
-        if (le != null)
-        {
-            le.TakeDamage(this.damage);
+    void OnCollisionEnter2D (Collision2D collision)
+	{
+		if (collision.gameObject.layer == 9) {
+			collision.gameObject.layer = 8;
+			collision.gameObject.GetComponent<SpriteRenderer> ().color = new Color (0.8f, 0.3f, 0.3f);
+		}
+		LivingEntity le = collision.gameObject.GetComponent<LivingEntity> ();
+		if (le != null) {
+			le.TakeDamage (this.damage);
+			Vector2 force = (le.transform.position - transform.position).normalized * power;
+			le.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (force.x, force.y), ForceMode2D.Impulse);
             Destroy(gameObject);
         }
 		Vector2 normal = collision.contacts [0].normal;

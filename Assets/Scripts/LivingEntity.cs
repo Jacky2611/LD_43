@@ -36,17 +36,7 @@ public class LivingEntity : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if (this.health <= 0)
-        {
-            //TODO: Animate this
-            if (blood != null)
-            {
-                blood.DeathBlood();
-            }
-            SoundManager.PlayRandomAt(deathSounds, transform.position);
-            Destroy(gameObject);
-
-        }
+        
 	}
 
     public void TakeDamage(float damage)
@@ -58,9 +48,28 @@ public class LivingEntity : MonoBehaviour {
 
         //Debug.Log("Talking Damage");
         this.health -= Random.Range((damage*0.85f), damage); //take a random amount of damage
+		this.health = Mathf.Max(health, 0);
 
-        SoundManager.PlayRandomAt(hurtSounds, transform.position);
-        
+		if(health>0)
+	        SoundManager.PlayRandomAt(hurtSounds, transform.position);
+		else
+		{
+			//TODO: Animate this
+			if (blood != null)
+			{
+				blood.DeathBlood();
+			}
+			SoundManager.PlayRandomAt(deathSounds, transform.position);
+			if (tag != "Player")
+				Destroy (gameObject);
+			else {
+				GetComponent<Animator> ().SetTrigger ("die");
+				GetComponent<PlayerController> ().enabled = false;
+				GetComponent<Collider2D> ().enabled = false;
+				transform.GetChild(1).GetComponent<ParticleSystem> ().Play ();
+				gameObject.isStatic = true;
+			}
+		}
     }
 
    
