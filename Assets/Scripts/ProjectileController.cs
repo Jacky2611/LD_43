@@ -9,7 +9,7 @@ public class ProjectileController : MonoBehaviour {
     public int maxBounceCounter=4;
 
     private int bounceCounter;
-
+	public GameObject effect;
 
     void Awake()
     {
@@ -35,6 +35,9 @@ public class ProjectileController : MonoBehaviour {
             le.TakeDamage(this.damage);
             Destroy(gameObject);
         }
+		Vector2 normal = collision.contacts [0].normal;
+		float angle = Mathf.Atan2 (normal.y, normal.x);
+		GameObject.Instantiate (effect, transform.position, Quaternion.Euler (new Vector3 (0, 0, angle/Mathf.PI*180-90)));
 
         /*
         foreach (ContactPoint contact in collision.contacts)

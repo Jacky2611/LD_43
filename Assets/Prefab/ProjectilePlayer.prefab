@@ -159,6 +159,7 @@ MonoBehaviour:
   damage: 10
   lifetime: 50
   maxBounceCounter: 4
+  effect: {fileID: 1426903067973746, guid: cec5a8f981a36485a8ffc38e3d08f99c, type: 2}
 --- !u!212 &212950029087179288
 SpriteRenderer:
   m_ObjectHideFlags: 1

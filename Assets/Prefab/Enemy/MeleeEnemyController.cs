@@ -15,7 +15,8 @@ public class MeleeEnemyController : MonoBehaviour
 
     //used to determine wether or not the player is standing in the attack area of this enemy
     public bool inAttackArea;
-    float damage;
+    public float damage;
+	public float attackForce;
 
     //A* Seeker component, used for pathfinding
     private Seeker seeker;
@@ -109,7 +110,7 @@ public class MeleeEnemyController : MonoBehaviour
         //repath from time to time
         if (Time.time > lastRepath + repathRate && seeker.IsDone())
         {
-            Debug.Log("REPATHING");
+            //Debug.Log("REPATHING");
 
             lastRepath = Time.time;
 
@@ -179,8 +180,8 @@ public class MeleeEnemyController : MonoBehaviour
     void Rotate()
     {
         direction = direction.normalized;
-        float Angel = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
-        transform.rotation = Quaternion.Euler(new Vector3(0,0,Angel-90));
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
+		transform.rotation = Quaternion.Euler(new Vector3(0,0,angle+90));
     }
 
 
@@ -224,8 +225,9 @@ public class MeleeEnemyController : MonoBehaviour
         if (inAttackArea)
         {
             player.GetComponent<LivingEntity>().TakeDamage(damage);
+			Vector3 push = (player.transform.position - transform.position).normalized * attackForce;
+			player.GetComponent<Rigidbody2D> ().AddForce (new Vector2(push.x,push.y),ForceMode2D.Impulse);
         }
-
     }
 
     public enum MeleeEnemyState
