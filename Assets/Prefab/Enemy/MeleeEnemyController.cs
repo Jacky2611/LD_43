@@ -17,6 +17,7 @@ public class MeleeEnemyController : MonoBehaviour
     public bool inAttackArea;
     public float damage;
 	public float attackForce;
+    public AudioClip attackSound;
 
     //A* Seeker component, used for pathfinding
     private Seeker seeker;
@@ -223,6 +224,9 @@ public class MeleeEnemyController : MonoBehaviour
 
     public void DealDamage()
     {
+
+        SoundManager.PlaySingleAt(attackSound, transform.position);
+
         if (inAttackArea)
         {
             player.GetComponent<LivingEntity>().TakeDamage(damage);
