@@ -9,8 +9,7 @@ public class GameController : MonoBehaviour {
     LivingEntity playerLiving;
 
 
-    public Slider healthbarLeft;
-    public Slider healthbarRight;
+	public GameObject healthbar;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +21,7 @@ public class GameController : MonoBehaviour {
 
         //TODO transitions
 
-        healthbarLeft.value = playerLiving.health / playerLiving.maxHealth;
-        healthbarRight.value = playerLiving.health / playerLiving.maxHealth;
+		healthbar.transform.localScale = new Vector3(playerLiving.health / playerLiving.maxHealth,1);
 
     }
 
