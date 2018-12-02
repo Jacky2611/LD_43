@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114358410567358956}
   - component: {fileID: 114431678663035960}
   m_Layer: 10
-  m_Name: Enemy
+  m_Name: MeleeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Mass: 60
   m_LinearDrag: 20
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -89,7 +89,7 @@ Animator:
   m_GameObject: {fileID: 1712397815999870}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dff4d74f4c248a946808a5f69bd9a31d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -122,6 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 595647d30c5bd9946b42e79f0804c148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  direction: {x: 0, y: 0}
+  playerDetectionRange: 20
+  attackRange: 1.5
 --- !u!212 &212504437762716048
 SpriteRenderer:
   m_ObjectHideFlags: 1
