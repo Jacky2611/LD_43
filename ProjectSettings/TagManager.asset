@@ -14,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - bullets
-  - 
-  - 
-  - 
-  - 
+  - BulletsPlayer
+  - BulletsEnemy
+  - Enemy
+  - Wall
+  - Player
   - 
   - 
   - 
