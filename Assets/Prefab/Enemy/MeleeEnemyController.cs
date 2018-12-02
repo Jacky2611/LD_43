@@ -59,6 +59,7 @@ public class MeleeEnemyController : MonoBehaviour
         animator.SetBool("playerInRange", playerDistance < playerDetectionRange);
         animator.SetBool("playerInAttackRange", playerDistance < attackRange);
         animator.SetFloat("playerDistance", playerDistance);
+        
     }
 
     void FixedUpdate()

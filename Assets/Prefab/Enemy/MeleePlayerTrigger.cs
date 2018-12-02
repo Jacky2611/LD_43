@@ -11,6 +11,7 @@ public class MeleePlayerTrigger : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             enemy.inAttackArea = true;
+            
         }
     }
 

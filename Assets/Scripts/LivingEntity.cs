@@ -11,6 +11,10 @@ public class LivingEntity : MonoBehaviour {
 
     public float health;
 
+    public AudioClip[] hurtSounds;
+
+    public AudioClip[] deathSounds;
+
 
 
     // Use this for initialization
@@ -39,7 +43,7 @@ public class LivingEntity : MonoBehaviour {
             {
                 blood.DeathBlood();
             }
-
+            SoundManager.PlayRandomAt(deathSounds, transform.position);
             Destroy(gameObject);
 
         }
@@ -54,6 +58,9 @@ public class LivingEntity : MonoBehaviour {
 
         //Debug.Log("Talking Damage");
         this.health -= Random.Range((damage*0.85f), damage); //take a random amount of damage
+
+        SoundManager.PlayRandomAt(hurtSounds, transform.position);
+        
     }
 
    
