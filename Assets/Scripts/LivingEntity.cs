@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class LivingEntity : MonoBehaviour {
 
+
+    private BloodSplatter blood;
     public float maxHealth = 100;
 
     public float health;
@@ -15,6 +17,8 @@ public class LivingEntity : MonoBehaviour {
     void Awake()
     {
         this.health = maxHealth;
+        blood = gameObject.GetComponent<BloodSplatter>();
+
     }
 
 
@@ -31,6 +35,11 @@ public class LivingEntity : MonoBehaviour {
         if (this.health <= 0)
         {
             //TODO: Animate this
+            if (blood != null)
+            {
+                blood.DeathBlood();
+            }
+
             Destroy(gameObject);
 
         }
@@ -38,6 +47,11 @@ public class LivingEntity : MonoBehaviour {
 
     public void TakeDamage(float damage)
     {
+        if (blood != null)
+        {
+            blood.HitBlood();
+        }
+
         //Debug.Log("Talking Damage");
         this.health -= Random.Range((damage*0.85f), damage); //take a random amount of damage
     }
