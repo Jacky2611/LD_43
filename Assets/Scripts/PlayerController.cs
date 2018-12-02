@@ -36,22 +36,16 @@ public class PlayerController : MonoBehaviour {
         ParseInput();
 
         LookAtMouse();
-
-
-
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Vector2 targetForward = transform.rotation * Vector2.right;
-
-            GameObject instance = Instantiate(projectile, rigidbody.position+(targetForward * 0.7f), new Quaternion());
-            Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
-
-
-
-            projrb2d.AddForce(targetForward * projectileSpeed);
-        }
     }
 
+	public void fire(){
+		Vector2 targetForward = transform.rotation * Vector2.down;
+
+		GameObject instance = Instantiate(projectile, rigidbody.position+(targetForward * 0.7f), transform.rotation);
+		Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
+
+		projrb2d.AddForce(targetForward * projectileSpeed);
+	}
 
     private void FixedUpdate()
     {
@@ -73,7 +67,11 @@ public class PlayerController : MonoBehaviour {
 
         //Animator stuff
 
-
+		float legAngle = Mathf.Atan2 (move.y, move.x);
+		transform.GetChild (0).eulerAngles = new Vector3 (0, 0, legAngle/Mathf.PI*180+90);
+		animator.SetFloat ("walkingSpeed", Mathf.Sqrt (move.x * move.x + move.y * move.y));
+		if (Input.GetButtonDown ("Fire1"))
+			animator.SetTrigger ("shoot");
 
         targetVelocity = move*speed;
 
@@ -89,7 +87,7 @@ public class PlayerController : MonoBehaviour {
         mousePos.y = mousePos.y - objectPos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90));
 
     }
 }

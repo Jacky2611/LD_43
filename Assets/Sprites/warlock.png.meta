@@ -157,7 +157,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a03b60c9a591a4f9f89bf74fb580f230
+      spriteID: 612b117f91d58498aa6850c52a983477
       vertices: []
       indices: 
       edges: []
@@ -177,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86b6f7a38ae944f20898b5ec40851ebb
+      spriteID: 76426ae5ab85547f6a00291a124f45ee
       vertices: []
       indices: 
       edges: []
@@ -197,7 +197,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55242a31cc19c481b81bd73f97154873
+      spriteID: 1e27a9b5810e94bcca96972296fcbad5
       vertices: []
       indices: 
       edges: []
@@ -217,7 +217,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15380de3b4a7e49228c7d4807fac9903
+      spriteID: d0c06e417be1540ba9f586a92ca43c36
       vertices: []
       indices: 
       edges: []
@@ -237,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb50b9d0aa3a04b4eb4663e2fcc38886
+      spriteID: 959d2336b59e64882a4a71893af2af20
       vertices: []
       indices: 
       edges: []
@@ -257,93 +257,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54d63349036684a6d8a62c0b859eeb18
+      spriteID: fd3bc16aa4ea54baea1739de0bc3f339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: warlock_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecf13ce6b40e148f59f565d16ec94ade
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: warlock_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1ddc8f9c8b6d48b6bcd24a2878c1abd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: warlock_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e955917171634254809efdf56a0a464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: warlock_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f27f0c3bb87e94c35aa4a1d43572373e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: warlock_10
       rect:
         serializedVersion: 2
         x: 320
@@ -357,13 +277,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c5e5ed4cb79431ebc66e3826c25419
+      spriteID: 2c5204e2909f44ad199bd25df8ac688b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_11
+      name: warlock_7
       rect:
         serializedVersion: 2
         x: 352
@@ -377,13 +297,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7da7e9a39f5df46878e8db54505d37e1
+      spriteID: 2ea632b55cb41421d853131304d9962b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_12
+      name: warlock_8
       rect:
         serializedVersion: 2
         x: 384
@@ -397,13 +317,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d4aa569fa91e40e89594665001ce530
+      spriteID: 195232ac3886b4e66a42ac0f0c27bcd0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_13
+      name: warlock_9
       rect:
         serializedVersion: 2
         x: 416
@@ -417,13 +337,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe871c9d682cc40dba13c6365009df88
+      spriteID: a63514458d1024552b8b3630febcf220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_14
+      name: warlock_10
       rect:
         serializedVersion: 2
         x: 0
@@ -437,13 +357,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e2892990409a4e308d1d8c3df871a1f
+      spriteID: 29fc0c765d2fc4e6e858fe940e7920fc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_15
+      name: warlock_11
       rect:
         serializedVersion: 2
         x: 32
@@ -457,13 +377,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ac252afa08f04421b6d6803e3076753
+      spriteID: 6bf4f02240f73468e99f6c288d47aae4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_16
+      name: warlock_12
       rect:
         serializedVersion: 2
         x: 64
@@ -477,13 +397,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f568c32fafce4de2b1eebe37dc718ed
+      spriteID: e5b0a1a4e929e4d2bbca0dd0ac70a976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_17
+      name: warlock_13
       rect:
         serializedVersion: 2
         x: 96
@@ -497,13 +417,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9622c6c5860a048eba3ac65cfd41e868
+      spriteID: 87bf709f6d038496ea84f0fa13504128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_18
+      name: warlock_14
       rect:
         serializedVersion: 2
         x: 128
@@ -517,13 +437,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b6a8edb0e8143c39976af6fb90a38d
+      spriteID: 8101565b5156d46b9b288aed1dcc0f34
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_19
+      name: warlock_15
       rect:
         serializedVersion: 2
         x: 160
@@ -537,13 +457,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05ae34ee62aa94bbf8608c0f92354622
+      spriteID: a411eccfae2f94097b43be45c8ccaca5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_20
+      name: warlock_16
       rect:
         serializedVersion: 2
         x: 192
@@ -557,13 +477,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b9ede191eac24e56ba4f4e50624921c
+      spriteID: 7d57bfe651f7d40a88a0184769719dc2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_21
+      name: warlock_17
       rect:
         serializedVersion: 2
         x: 224
@@ -577,13 +497,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ce15e686542f4247abe7027a3a5af64
+      spriteID: 428d57ec6e85d40229d0dacdf916d0e5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_22
+      name: warlock_18
       rect:
         serializedVersion: 2
         x: 256
@@ -597,13 +517,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9c3d80fee634495d932b6df6e17e4d4
+      spriteID: a6074f929419d40de80809cba327ac02
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_23
+      name: warlock_19
       rect:
         serializedVersion: 2
         x: 288
@@ -617,13 +537,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd15ffc1c7c3e46709bfae79e71b25c4
+      spriteID: 65f87c53c544143c5a3d087315c38d06
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_24
+      name: warlock_20
       rect:
         serializedVersion: 2
         x: 320
@@ -637,13 +557,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18d2c0a96c0d74c519514b66ccef31b1
+      spriteID: 7b5b5df9f3600422c8da7fb5f1b9b282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warlock_25
+      name: warlock_21
       rect:
         serializedVersion: 2
         x: 352
@@ -657,7 +577,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd50f813f4f404ec5a2771fc4486e5ff
+      spriteID: 4030759c2b8924a669c0dc43bd4c6021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warlock_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a5d31e213834602b29689101e267ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: warlock_23
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111726387ed26495c94df12e1a10db54
       vertices: []
       indices: 
       edges: []

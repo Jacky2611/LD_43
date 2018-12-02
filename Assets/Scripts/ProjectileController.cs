@@ -54,4 +54,10 @@ public class ProjectileController : MonoBehaviour {
         }
 
     }
+	void OnCollisionExit2D(Collision2D collision)
+	{
+		Vector2 temp = GetComponent<Rigidbody2D> ().velocity;
+		float angle = Mathf.Atan2 (temp.y, temp.x);
+		transform.eulerAngles = new Vector3 (0, 0, angle/Mathf.PI*180+90);
+	}
 }
