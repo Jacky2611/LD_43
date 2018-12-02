@@ -14,7 +14,7 @@ public class MeleeEnemyController : MonoBehaviour
     private Animator animator;
 
     //used to determine wether or not the player is standing in the attack area of this enemy
-    bool inAttackPath;
+    public bool inAttackArea;
     float damage;
 
     //A* Seeker component, used for pathfinding
@@ -30,7 +30,7 @@ public class MeleeEnemyController : MonoBehaviour
     public MeleeEnemyState state;
     public Vector2 direction;
     public float playerDetectionRange = 20;
-    public float attackRange = 1.5f;
+    public float attackRange = 1.0f;
     private float playerDistance;
 
     void Awake()
@@ -136,7 +136,7 @@ public class MeleeEnemyController : MonoBehaviour
             // If you want maximum performance you can check the squared distance instead to get rid of a
             // square root calculation. But that is outside the scope of this tutorial.
             distanceToWaypoint = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
-            if (distanceToWaypoint < nextWaypointDistance)
+            if (distanceToWaypoint < nextWaypointDistance )
             {
                 // Check if there is another waypoint or if we have reached the end of the path
                 if (currentWaypoint + 1 < path.vectorPath.Count)
@@ -145,11 +145,13 @@ public class MeleeEnemyController : MonoBehaviour
                 }
                 else
                 {
+
+
                     // Set a status variable to indicate that the agent has reached the end of the path.
                     // You can use this to trigger some special code if your game requires that.
                     reachedEndOfPath = true;
                     break;
-                }
+                } 
             }
             else
             {
@@ -219,7 +221,7 @@ public class MeleeEnemyController : MonoBehaviour
 
     public void DealDamage()
     {
-        if (inAttackPath)
+        if (inAttackArea)
         {
             player.GetComponent<LivingEntity>().TakeDamage(damage);
         }
