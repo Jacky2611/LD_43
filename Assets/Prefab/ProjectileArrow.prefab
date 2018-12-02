@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212186075275171480}
   - component: {fileID: 50827308946082638}
   - component: {fileID: 114460273280987640}
-  - component: {fileID: 70415062723329008}
+  - component: {fileID: 58599186694231218}
   m_Layer: 9
   m_Name: ProjectileArrow
   m_TagString: Untagged
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &70415062723329008
-CapsuleCollider2D:
+--- !u!58 &58599186694231218
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,9 +75,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016840458, y: 0.0056136847}
-  m_Size: {x: 0.17479515, y: 0.47231793}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12
 --- !u!114 &114460273280987640
 MonoBehaviour:
   m_ObjectHideFlags: 1
