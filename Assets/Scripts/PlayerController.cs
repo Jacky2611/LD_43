@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour {
 	public void fire(){
 		Vector2 targetForward = transform.rotation * Vector2.down;
 
-		GameObject instance = Instantiate(projectile, rigidbody.position+(targetForward * 0.7f), transform.rotation);
+        Vector2 projectilePosition= rigidbody.position + (targetForward * 0.7f);
+
+		GameObject instance = Instantiate(projectile, new Vector3(projectilePosition.x, projectilePosition.y, -0.3f), transform.rotation);
 		Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
 
 		projrb2d.AddForce(targetForward * projectileSpeed);

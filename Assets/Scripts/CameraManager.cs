@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour {
 
+    public int zoomLevel = 6;
+
     Camera camera;
     GameObject player;
     Resolution res;
@@ -30,6 +32,6 @@ public class CameraManager : MonoBehaviour {
 
     void UpdateCameraScale()
     {
-        camera.orthographicSize= ((res.width/6) / 32 / 2);
+        camera.orthographicSize= ((res.width/ zoomLevel) / 32 / 2);
     }
 }

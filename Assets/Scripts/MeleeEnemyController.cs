@@ -13,6 +13,10 @@ public class MeleeEnemyController : MonoBehaviour
     //this is used to transition between diferent AI states
     private Animator animator;
 
+    //used to determine wether or not the player is standing in the attack area of this enemy
+    bool inAttackPath;
+    float damage;
+
     //A* Seeker component, used for pathfinding
     private Seeker seeker;
     public Path path;
@@ -163,8 +167,11 @@ public class MeleeEnemyController : MonoBehaviour
         // Multiply the direction by our desired speed to get a velocity
         Vector3 velocity = dir * movementSpeed * speedFactor;
         
+
+
         // If you are writing a 2D game you may want to remove the CharacterController and instead use e.g transform.Translate
         transform.position += velocity * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, transform.position.y, -0.4f);
     }
 
     void Rotate()
@@ -207,6 +214,15 @@ public class MeleeEnemyController : MonoBehaviour
 
     public void StopAttacking()
     {
+
+    }
+
+    public void DealDamage()
+    {
+        if (inAttackPath)
+        {
+            player.GetComponent<LivingEntity>().TakeDamage(damage);
+        }
 
     }
 
