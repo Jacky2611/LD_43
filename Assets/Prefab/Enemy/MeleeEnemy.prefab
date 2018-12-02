@@ -188,14 +188,14 @@ MonoBehaviour:
   - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
   - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
   - {fileID: 1456363319293660, guid: 4fc108818a4ada644b117adb5afa745f, type: 2}
-  splatterDeathDistance: 1
+  splatterDeathDistance: 0.5
   minDeathBlood: 4
   maxDeathBlood: 6
   splatterHurt:
   - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
   - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
   - {fileID: 1456363319293660, guid: 4fc108818a4ada644b117adb5afa745f, type: 2}
-  splatterHurtDistance: 1
+  splatterHurtDistance: 0.5
   minHurtBlood: 2
   maxHurtBlood: 5
 --- !u!114 &114358410567358956
@@ -211,8 +211,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
-  hurtSounds: []
-  deathSounds: []
+  hurtSounds:
+  - {fileID: 8300000, guid: 374cdec51e12d574fb84b16e37480022, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 2f9487263bcff694aa7ff268ee5f0cac, type: 3}
 --- !u!114 &114431678663035960
 MonoBehaviour:
   m_ObjectHideFlags: 1

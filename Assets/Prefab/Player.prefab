@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 58285105505640702}
   - component: {fileID: 114585906707271290}
   - component: {fileID: 114495179585599554}
+  - component: {fileID: 114178011846597382}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -159,6 +160,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114178011846597382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1895453101333040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2990d95e30293c428d91f1af6c4b37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splatterDeath:
+  - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
+  - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
+  - {fileID: 1456363319293660, guid: 4fc108818a4ada644b117adb5afa745f, type: 2}
+  splatterDeathDistance: 1.2
+  minDeathBlood: 25
+  maxDeathBlood: 35
+  splatterHurt:
+  - {fileID: 1183457325189476, guid: 758569258786d6b458c33bc0c4a521d6, type: 2}
+  - {fileID: 1361912728234100, guid: f3af80400051e2547b88170f649d8ef2, type: 2}
+  - {fileID: 1456363319293660, guid: 4fc108818a4ada644b117adb5afa745f, type: 2}
+  splatterHurtDistance: 0.4
+  minHurtBlood: 1
+  maxHurtBlood: 1
 --- !u!114 &114495179585599554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +198,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 100
+  hurtSounds:
+  - {fileID: 8300000, guid: 374cdec51e12d574fb84b16e37480022, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 42655d41019806d40919e6afb2b188d6, type: 3}
 --- !u!114 &114585906707271290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,6 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  shootSound: {fileID: 8300000, guid: 56f3f6aef41039544a3c0a7fe2f44409, type: 3}
   projectile: {fileID: 1397009729803524, guid: d9311bcf0c8e61249ac8a0d5a293ac23, type: 2}
   projectileSpeed: 250
 --- !u!198 &198456781570148110

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public float speed = 2f;
 
 
+    public AudioClip shootSound;
     public GameObject projectile;
     public float projectileSpeed=150;
 
@@ -39,6 +40,8 @@ public class PlayerController : MonoBehaviour {
     }
 
 	public void fire(){
+        SoundManager.PlaySingleAt(shootSound, transform.position);
+
 		Vector2 targetForward = transform.rotation * Vector2.down;
 
         Vector2 projectilePosition= rigidbody.position + (targetForward * 0.7f);
