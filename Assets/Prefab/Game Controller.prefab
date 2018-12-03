@@ -53,6 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   scoreDisplay: {fileID: 0}
+  enemies:
+  - {fileID: 1712397815999870, guid: 6d064c267964a6d40923ed6cb74af3f1, type: 2}
+  - {fileID: 1712397815999870, guid: ba2696fa7d70cb84785937136d79570c, type: 2}
   healthbar: {fileID: 0}
   fadeinMusic: {fileID: 8300000, guid: 8f567f66a93f04331b5a4b9fc6d3d634, type: 3}
   mainMusic: {fileID: 8300000, guid: e29d72b3c9ca34cb299d801678d90a5b, type: 3}
