@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-    AudioSource musicSource;
+    public AudioSource musicSource;
+    public AudioSource uiSource;
+
 
     public static SoundManager instance;
 
@@ -24,6 +26,13 @@ public class SoundManager : MonoBehaviour {
         }
         DontDestroyOnLoad(this);
 	}
+
+    public static void PlayUISound(AudioClip clip)
+    {
+        instance.uiSource.clip = clip; // define the clip
+        // set other aSource properties here, if desired
+        instance.uiSource.Play(); // start the sound
+    }
 
 
     //Used to play single sound clips.

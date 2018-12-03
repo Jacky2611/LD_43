@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
 
+    public AudioClip buttonSound;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,14 +19,14 @@ public class MainMenuManager : MonoBehaviour {
 
     public void ButtonQuit()
     {
-
+        SoundManager.PlayUISound(buttonSound);
         Application.Quit();
     }
 
     public void ButtonPlay()
     {
+        SoundManager.PlayUISound(buttonSound);
         StartCoroutine(LoadGameScene());
-
     }
 
     IEnumerator LoadGameScene()
