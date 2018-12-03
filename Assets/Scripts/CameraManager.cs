@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour {
 
-    public int zoomLevel = 6;
+    public int zoomLevel = 4;
 
     Camera camera;
     GameObject player;
@@ -22,16 +22,24 @@ public class CameraManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        if(res.width != Screen.currentResolution.width)
+
+        camera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, camera.transform.position.z);
+	}
+
+    private void OnGUI()
+    {
+        if (res.width != Screen.currentResolution.width)
         {
             res = Screen.currentResolution;
             UpdateCameraScale();
         }
-        camera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, camera.transform.position.z);
-	}
+    }
 
     void UpdateCameraScale()
     {
-        camera.orthographicSize= ((res.width/ zoomLevel) / 32 / 2);
+
+        camera.orthographicSize= ((res.height/zoomLevel) / 32 / 2);
+
+
     }
 }

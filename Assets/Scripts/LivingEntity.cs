@@ -49,6 +49,8 @@ public class LivingEntity : MonoBehaviour {
             }
         }else
 		{
+            //We are dead
+
 			//TODO: Animate this
 			if (blood != null)
 			{
@@ -64,6 +66,8 @@ public class LivingEntity : MonoBehaviour {
             }
             else{
                 GetComponent<EnemyControler>().Die();
+                GameController.AddScore((int)Random.Range(maxHealth*.9f, maxHealth * 1.1f));
+
             }
 		}
     }

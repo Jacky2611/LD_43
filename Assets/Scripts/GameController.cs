@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+    private static GameController instance;
+
     public GameObject player;
     LivingEntity playerLiving;
+    public Text scoreDisplay;
+
+    private int score;
 
 
 	public GameObject healthbar;
 
 	// Use this for initialization
 	void Start () {
+        instance = this;
         playerLiving = player.GetComponent<LivingEntity>();
 	}
 	
@@ -33,5 +39,11 @@ public class GameController : MonoBehaviour {
 
             Debug.Log("Game over");
         }
+    }
+
+    public static void AddScore(int score) {
+        instance.score += score;
+        instance.scoreDisplay.text = ("SCORE: " + instance.score);
+
     }
 }
