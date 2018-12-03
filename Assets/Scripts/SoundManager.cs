@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-    public AudioSource musicSource;
-    public AudioSource uiSource;
 
+    //created automatically
+    DoubleAudioSource musicSource;
+    AudioSource uiSource;
+
+
+    public AudioClip initialBackgroundMusic;
 
     public static SoundManager instance;
 
@@ -22,10 +26,28 @@ public class SoundManager : MonoBehaviour {
         else
         {
             Destroy(gameObject);
-            
         }
+
+        musicSource = gameObject.AddComponent(typeof(DoubleAudioSource)) as DoubleAudioSource;
+        uiSource = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+
+        musicSource.CrossFade(initialBackgroundMusic, 1, 0);
+
         DontDestroyOnLoad(this);
 	}
+
+
+    public static void PlayNext(AudioClip clip)
+    {
+        instance.musicSource.QueueNext(clip);
+    }
+    
+    public static void CrossfadeMusic(AudioClip clip, float fadingTime, float delayBeforeFade=0)
+    {
+        instance.musicSource.CrossFade(clip, 1, fadingTime, delayBeforeFade);
+    }
+
+
 
     public static void PlayUISound(AudioClip clip)
     {

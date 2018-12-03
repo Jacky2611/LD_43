@@ -16,10 +16,19 @@ public class GameController : MonoBehaviour {
 
 	public GameObject healthbar;
 
+
+    public AudioClip fadeinMusic;
+    public AudioClip mainMusic;
+
+
 	// Use this for initialization
 	void Start () {
         instance = this;
         playerLiving = player.GetComponent<LivingEntity>();
+
+        SoundManager.CrossfadeMusic(fadeinMusic, 1.5f);
+        SoundManager.PlayNext(mainMusic);
+        //SoundManager.CrossfadeMusic(mainMusic, 0.1f, fadeinMusic.length-0.1f);
 	}
 	
 	// Update is called once per frame
