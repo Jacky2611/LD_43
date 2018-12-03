@@ -85,8 +85,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: HurtSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1
     functionName: HitBlood
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
+    functionName: HurtSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -101,6 +115,13 @@ AnimationClip:
     messageOptions: 0
   - time: 2
     functionName: DeathBlood
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2
+    functionName: HurtSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
