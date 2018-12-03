@@ -24,6 +24,36 @@ public class LivingEntity : MonoBehaviour {
         blood = gameObject.GetComponent<BloodSplatter>();
 
     }
+
+    public void FixedUpdate()
+    {
+        if (health < 0) { 
+
+            //We are dead
+
+            //TODO: Animate this
+            if (blood != null)
+            {
+                blood.DeathBlood();
+            }
+            SoundManager.PlayRandomAt(deathSounds, transform.position);
+            GetComponent<Animator>().SetTrigger("die");
+            gameObject.isStatic = true;
+            if (tag == "Player")
+            {
+                transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                GetComponent<PlayerController>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+            }
+            else
+            {
+                GetComponent<EnemyControler>().Die();
+                GameController.AddScore((int)Random.Range(maxHealth * .9f, maxHealth * 1.1f));
+
+            }
+        }
+    }
+
     public void LooseHealth(float healthLoss)
     {
         this.health -= Random.Range((healthLoss * 0.85f), healthLoss); //take a random amount of damage
@@ -41,35 +71,13 @@ public class LivingEntity : MonoBehaviour {
         this.health -= Random.Range((damage*0.85f), damage); //take a random amount of damage
 		this.health = Mathf.Max(health, 0);
 
-        if(health>0){
-	        SoundManager.PlayRandomAt(hurtSounds, transform.position);
-            if(tag == "Player")
-            {
-                gameObject.GetComponent<Animator>().SetBool("harvest", false);
-            }
-        }else
-		{
-            //We are dead
 
-			//TODO: Animate this
-			if (blood != null)
-			{
-				blood.DeathBlood();
-			}
-			SoundManager.PlayRandomAt(deathSounds, transform.position);
-			GetComponent<Animator> ().SetTrigger ("die");
-			gameObject.isStatic = true;
-            if(tag == "Player"){
-                transform.GetChild(1).GetComponent<ParticleSystem>().Play();
-                GetComponent<PlayerController>().enabled = false;
-                GetComponent<CircleCollider2D>().enabled = false;
-            }
-            else{
-                GetComponent<EnemyControler>().Die();
-                GameController.AddScore((int)Random.Range(maxHealth*.9f, maxHealth * 1.1f));
+        SoundManager.PlayRandomAt(hurtSounds, transform.position);
+        if (tag == "Player")
+        {
+            gameObject.GetComponent<Animator>().SetBool("harvest", false);
+        }
 
-            }
-		}
     }
     public void OnTriggerStay2D(Collider2D collider)
     {
