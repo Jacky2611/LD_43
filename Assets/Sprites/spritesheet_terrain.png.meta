@@ -42,6 +42,7 @@ TextureImporter:
     21300074: spritesheet_terrain_37
     21300076: spritesheet_terrain_38
     21300078: spritesheet_terrain_39
+    21300080: spritesheet_terrain_40
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -1003,6 +1004,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1429a88436b294e1b95717e4ce464704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_terrain_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9c14a2d888449bab7ee56ff19a1b36
       vertices: []
       indices: 
       edges: []
