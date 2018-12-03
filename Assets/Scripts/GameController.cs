@@ -10,11 +10,10 @@ public class GameController : MonoBehaviour {
     public GameObject player;
     LivingEntity playerLiving;
     public Text scoreDisplay;
-    public GameObject[] enemies;
 
     private int score;
-    private GameObject[] spawns;
-    private float timeToNextSpawn = float.MaxValue;
+    //private GameObject[] spawns;
+    //private float timeToNextSpawn = float.MaxValue;
 
 	public GameObject healthbar;
 
@@ -31,7 +30,7 @@ public class GameController : MonoBehaviour {
         SoundManager.CrossfadeMusic(fadeinMusic, 2.5f);
         SoundManager.PlayNext(mainMusic, 2.6f); //let the fade finish before we use the (now) empty AudioSource
 
-        spawns = GameObject.FindGameObjectsWithTag("Respawn");
+        //spawns = GameObject.FindGameObjectsWithTag("Respawn");
 	}
 	
 	// Update is called once per frame
@@ -51,6 +50,8 @@ public class GameController : MonoBehaviour {
 
             Debug.Log("Game over");
         }
+
+        /*
         if(timeToNextSpawn<=0){
             while(true){
                 Vector3 pos = spawns[Random.Range(0, spawns.Length)].transform.position;
@@ -62,17 +63,19 @@ public class GameController : MonoBehaviour {
             }
         }
         timeToNextSpawn-=1/60f;
+        */
     }
+    /*
     void ResetTimer(){
         float newTime = Mathf.Pow(0.9947f, score) * 17.0509f;
         if (timeToNextSpawn < 0)
             timeToNextSpawn = float.MaxValue;
         timeToNextSpawn = Mathf.Min(newTime, timeToNextSpawn);
     }
-
+    */
     public static void AddScore(int score) {
         instance.score += score;
         instance.scoreDisplay.text = ("SCORE: " + instance.score);
-        GameObject.Find("Game Controller").GetComponent<GameController>().ResetTimer();
+        //GameObject.Find("Game Controller").GetComponent<GameController>().ResetTimer();
     }
 }
