@@ -192,7 +192,7 @@ MonoBehaviour:
   repathRate: 0.8
   state: 0
   direction: {x: 0, y: 0}
-  playerDetectionRange: 10
+  playerDetectionRange: 1000
   attackRange: 6.5
 --- !u!114 &114980717594435072
 MonoBehaviour:

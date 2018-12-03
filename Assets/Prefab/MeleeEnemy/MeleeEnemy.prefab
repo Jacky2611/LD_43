@@ -99,15 +99,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712397815999870}
-  m_LocalRotation: {x: 0, y: -0, z: 0.89060986, w: -0.4547681}
-  m_LocalPosition: {x: 3.23, y: -10.18, z: -0.4}
+  m_LocalRotation: {x: 0, y: 0, z: -0.06453212, w: 0.9979156}
+  m_LocalPosition: {x: -21.22408, y: 12.86, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4099072740089360}
   - {fileID: 4406512069694632}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -485.9}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -727.4}
 --- !u!50 &50576583444585140
 Rigidbody2D:
   serializedVersion: 4
@@ -266,7 +266,7 @@ MonoBehaviour:
   repathRate: 0.5
   state: 0
   direction: {x: 0, y: 0}
-  playerDetectionRange: 10
+  playerDetectionRange: 1000
   attackRange: 1
 --- !u!114 &114980717594435072
 MonoBehaviour:
