@@ -10,8 +10,12 @@ public class PlayerController : MonoBehaviour {
     public AudioClip shootSound;
     public GameObject projectile;
     public float projectileSpeed=150;
-    public float healthGain = 40;
-    public float selfDamage = 5;
+    public float selfDamage = 10;
+
+    public AudioClip harvestStartSound;
+    public AudioClip harvestSound;
+    public float healthGainMultiplier = .3f;
+
 
     Vector2 targetVelocity; //this is the velocity we want to have
 
@@ -22,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
     [HideInInspector]
     public bool locked=false;
-    private GameObject target;
+    private GameObject harvestTarget;
 
     // Use this for initialization this objects
     private void Awake()
@@ -96,20 +100,32 @@ public class PlayerController : MonoBehaviour {
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90));
     }
 
-    public void Lock(GameObject target)
+    public void StartHarvest(GameObject target)
     {
         speed = 0;
         rigidbody.velocity = new Vector2();
-        this.target = target;
+        this.harvestTarget = target;
+
+        SoundManager.PlaySingleAt(harvestStartSound, transform.position);
+
     }
-    public void Unlock()
+    public void AbortHarvest()
     {
         speed = maxSpeed;
         GetComponent<Animator>().SetBool("harvest", false);
     }
     public void finishHarvest(){
-        GetComponent<LivingEntity>().GainHealth(healthGain);
-        Destroy(target);
-        Unlock();
+        LivingEntity harvestTargetLiving = this.harvestTarget.GetComponent<LivingEntity>();
+
+        if (harvestTargetLiving != null) {
+            SoundManager.PlaySingleAt(harvestSound, transform.position);
+            GetComponent<LivingEntity>().GainHealth(healthGainMultiplier *harvestTargetLiving.maxHealth);
+
+            //ADd to score
+            GameController.AddScore((int) (harvestTargetLiving.maxHealth*0.1f));
+        }
+
+        Destroy(harvestTarget);
+        AbortHarvest();
     }
 }

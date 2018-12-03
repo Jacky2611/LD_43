@@ -75,11 +75,11 @@ public class LivingEntity : MonoBehaviour {
     {
         if (health.Equals(0.0f) && collider.gameObject.tag == "Player" && Input.GetButtonDown("Harvest"))
         {
-            collider.gameObject.GetComponent<PlayerController>().Lock(gameObject);
+            collider.gameObject.GetComponent<PlayerController>().StartHarvest(gameObject);
             collider.gameObject.GetComponent<Animator>().SetBool("harvest", true);
         }else if(health.Equals(0.0f) && collider.gameObject.tag == "Player" && Input.GetButtonUp("Harvest"))
         {
-            collider.gameObject.GetComponent<PlayerController>().Unlock();
+            collider.gameObject.GetComponent<PlayerController>().AbortHarvest();
             collider.gameObject.GetComponent<Animator>().SetBool("harvest", false);
         }
     }

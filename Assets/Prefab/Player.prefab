@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a88afe1b0688d498242497dddca41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 500
   health: 100
   hurtSounds:
   - {fileID: 8300000, guid: 374cdec51e12d574fb84b16e37480022, type: 3}
@@ -248,8 +248,10 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: 56f3f6aef41039544a3c0a7fe2f44409, type: 3}
   projectile: {fileID: 1397009729803524, guid: d9311bcf0c8e61249ac8a0d5a293ac23, type: 2}
   projectileSpeed: 400
-  healthGain: 40
   selfDamage: 5
+  harvestStartSound: {fileID: 8300000, guid: 374cdec51e12d574fb84b16e37480022, type: 3}
+  harvestSound: {fileID: 8300000, guid: de8386864df6c2e4394e1c0ad82f523c, type: 3}
+  healthGainMultiplier: 0.55
   locked: 0
 --- !u!198 &198456781570148110
 ParticleSystem:
