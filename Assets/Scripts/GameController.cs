@@ -28,9 +28,8 @@ public class GameController : MonoBehaviour {
         instance = this;
         playerLiving = player.GetComponent<LivingEntity>();
 
-        SoundManager.CrossfadeMusic(fadeinMusic, 1.5f);
-        SoundManager.PlayNext(mainMusic);
-        //SoundManager.CrossfadeMusic(mainMusic, 0.1f, fadeinMusic.length-0.1f);
+        SoundManager.CrossfadeMusic(fadeinMusic, 2.5f);
+        SoundManager.PlayNext(mainMusic, 2.6f); //let the fade finish before we use the (now) empty AudioSource
 
         spawns = GameObject.FindGameObjectsWithTag("Respawn");
 	}

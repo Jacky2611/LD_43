@@ -103,14 +103,19 @@ public class DoubleAudioSource : MonoBehaviour
 
     #endregion
 
-
-    public void QueueNext(AudioClip clip)
+    //use delay if you have to wait for a fade first
+    public void QueueNext(AudioClip clip,float delay=0)
     {
-        var playNext =StartCoroutine(PlayNext(clip));
+        var playNext =StartCoroutine(PlayNext(clip,delay));
     }
 
-    IEnumerator PlayNext(AudioClip clip)
+    IEnumerator PlayNext(AudioClip clip, float delay=0)
     {
+        if (delay > 0)
+        {
+            yield return new WaitForSeconds(delay);
+        }
+
         if (!isPlaying)
         {
             CrossFade(clip, 1, 0.1f);
@@ -127,9 +132,8 @@ public class DoubleAudioSource : MonoBehaviour
             _source1.clip = clip;
             _source1.loop = true;
             _source1.volume = 1;
-            Debug.Log("Set Volume + "+_source1.volume);
             _source1.PlayScheduled(AudioSettings.dspTime+remainingPlaybackTime);
-            Debug.Log("Scheduled");
+
             if (remainingPlaybackTime > 0)
             {
                 yield return new WaitForSeconds(remainingPlaybackTime);
@@ -148,6 +152,7 @@ public class DoubleAudioSource : MonoBehaviour
             _source0.loop = true;
             _source0.volume = 1;
             _source0.PlayScheduled(AudioSettings.dspTime + remainingPlaybackTime);
+
 
             if (remainingPlaybackTime > 0)
             {
@@ -197,7 +202,6 @@ public class DoubleAudioSource : MonoBehaviour
             _source1.Play();
             _source1.volume = 0;
 
-            Debug.Log("Set Volume in fade + " + _source1.volume);
 
             if (_firstSourceFadeRoutine != null)
             {

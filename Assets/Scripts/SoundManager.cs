@@ -37,9 +37,9 @@ public class SoundManager : MonoBehaviour {
 	}
 
 
-    public static void PlayNext(AudioClip clip)
+    public static void PlayNext(AudioClip clip, float delay = 0)
     {
-        instance.musicSource.QueueNext(clip);
+        instance.musicSource.QueueNext(clip, delay);
     }
     
     public static void CrossfadeMusic(AudioClip clip, float fadingTime, float delayBeforeFade=0)
