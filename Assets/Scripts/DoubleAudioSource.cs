@@ -127,8 +127,9 @@ public class DoubleAudioSource : MonoBehaviour
             _source1.clip = clip;
             _source1.loop = true;
             _source1.volume = 1;
+            Debug.Log("Set Volume + "+_source1.volume);
             _source1.PlayScheduled(AudioSettings.dspTime+remainingPlaybackTime);
-
+            Debug.Log("Scheduled");
             if (remainingPlaybackTime > 0)
             {
                 yield return new WaitForSeconds(remainingPlaybackTime);
@@ -195,6 +196,8 @@ public class DoubleAudioSource : MonoBehaviour
             _source1.loop = true;
             _source1.Play();
             _source1.volume = 0;
+
+            Debug.Log("Set Volume in fade + " + _source1.volume);
 
             if (_firstSourceFadeRoutine != null)
             {

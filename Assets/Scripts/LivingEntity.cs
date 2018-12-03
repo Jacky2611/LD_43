@@ -15,11 +15,12 @@ public class LivingEntity : MonoBehaviour {
 
     public AudioClip[] deathSounds;
 
-
+    private bool death;
 
     // Use this for initialization
     void Awake()
     {
+        this.death = false;
         this.health = maxHealth;
         blood = gameObject.GetComponent<BloodSplatter>();
 
@@ -27,8 +28,8 @@ public class LivingEntity : MonoBehaviour {
 
     public void FixedUpdate()
     {
-        if (health < 0) { 
-
+        if (health <= 0 && !death) {
+            death = true;
             //We are dead
 
             //TODO: Animate this
