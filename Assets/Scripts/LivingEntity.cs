@@ -24,21 +24,11 @@ public class LivingEntity : MonoBehaviour {
         blood = gameObject.GetComponent<BloodSplatter>();
 
     }
-
-
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-
-        
-	}
-
+    public void LooseHealth(float healthLoss)
+    {
+        this.health -= Random.Range((healthLoss * 0.85f), healthLoss); //take a random amount of damage
+        this.health = Mathf.Max(health, 0);
+    }
     public void TakeDamage(float damage)
     {
         if (blood != null)
@@ -51,9 +41,13 @@ public class LivingEntity : MonoBehaviour {
         this.health -= Random.Range((damage*0.85f), damage); //take a random amount of damage
 		this.health = Mathf.Max(health, 0);
 
-		if(health>0)
+        if(health>0){
 	        SoundManager.PlayRandomAt(hurtSounds, transform.position);
-		else
+            if(tag == "Player")
+            {
+                gameObject.GetComponent<Animator>().SetBool("harvest", false);
+            }
+        }else
 		{
 			//TODO: Animate this
 			if (blood != null)
@@ -72,5 +66,25 @@ public class LivingEntity : MonoBehaviour {
                 GetComponent<EnemyControler>().Die();
             }
 		}
+    }
+    public void OnTriggerStay2D(Collider2D collider)
+    {
+        if (health.Equals(0.0f) && collider.gameObject.tag == "Player" && Input.GetButtonDown("Harvest"))
+        {
+            collider.gameObject.GetComponent<PlayerController>().Lock(gameObject);
+            collider.gameObject.GetComponent<Animator>().SetBool("harvest", true);
+        }else if(health.Equals(0.0f) && collider.gameObject.tag == "Player" && Input.GetButtonUp("Harvest"))
+        {
+            collider.gameObject.GetComponent<PlayerController>().Unlock();
+            collider.gameObject.GetComponent<Animator>().SetBool("harvest", false);
+        }
+    }
+    public void GainHealth(float amount){
+        health += amount;
+        health = Mathf.Min(maxHealth, health);
+    }
+    public void HurtSound()
+    {
+        SoundManager.PlayRandomAt(hurtSounds, transform.position);
     }
 }

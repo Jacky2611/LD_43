@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float speed = 2f;
-
+    private float maxSpeed;
 
     public AudioClip shootSound;
     public GameObject projectile;
     public float projectileSpeed=150;
-
+    public float healthGain = 40;
+    public float selfDamage = 5;
 
     Vector2 targetVelocity; //this is the velocity we want to have
 
@@ -19,18 +20,18 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private Rigidbody2D rigidbody;
 
+    [HideInInspector]
+    public bool locked=false;
+    private GameObject target;
+
     // Use this for initialization this objects
     private void Awake()
     {
+        maxSpeed = speed;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
     }
-
-
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 
 		GameObject instance = Instantiate(projectile, new Vector3(projectilePosition.x, projectilePosition.y, -0.3f), transform.rotation);
 		Rigidbody2D projrb2d = instance.GetComponent<Rigidbody2D>();
-
+        GetComponent<LivingEntity>().LooseHealth(selfDamage);
 		projrb2d.AddForce(targetForward * projectileSpeed);
 	}
 
@@ -95,8 +96,20 @@ public class PlayerController : MonoBehaviour {
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + 90));
     }
 
-    public void OnTriggerStay2D()
+    public void Lock(GameObject target)
     {
-
+        speed = 0;
+        rigidbody.velocity = new Vector2();
+        this.target = target;
+    }
+    public void Unlock()
+    {
+        speed = maxSpeed;
+        GetComponent<Animator>().SetBool("harvest", false);
+    }
+    public void finishHarvest(){
+        GetComponent<LivingEntity>().GainHealth(healthGain);
+        Destroy(target);
+        Unlock();
     }
 }
