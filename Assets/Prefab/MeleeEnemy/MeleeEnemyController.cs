@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class MeleeEnemyController : MonoBehaviour
+public class MeleeEnemyController : EnemyControler
 {
 
     //this enemies target
@@ -238,5 +238,11 @@ public class MeleeEnemyController : MonoBehaviour
     public enum MeleeEnemyState
     {
         IDLE, CHASING, ATTACKING
+    }
+
+    public override void Die()
+    {
+        GetComponent<MeleeEnemyController>().enabled = false;
+        GetComponent<CircleCollider2D>().isTrigger = true;
     }
 }

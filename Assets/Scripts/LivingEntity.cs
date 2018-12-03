@@ -45,6 +45,7 @@ public class LivingEntity : MonoBehaviour {
         {
             blood.HitBlood();
         }
+        GetComponent<Animator>().SetTrigger("hit");
 
         //Debug.Log("Talking Damage");
         this.health -= Random.Range((damage*0.85f), damage); //take a random amount of damage
@@ -60,17 +61,16 @@ public class LivingEntity : MonoBehaviour {
 				blood.DeathBlood();
 			}
 			SoundManager.PlayRandomAt(deathSounds, transform.position);
-			if (tag != "Player")
-				Destroy (gameObject);
-			else {
-				GetComponent<Animator> ().SetTrigger ("die");
-				GetComponent<PlayerController> ().enabled = false;
-				GetComponent<Collider2D> ().enabled = false;
-				transform.GetChild(1).GetComponent<ParticleSystem> ().Play ();
-				gameObject.isStatic = true;
-			}
+			GetComponent<Animator> ().SetTrigger ("die");
+			gameObject.isStatic = true;
+            if(tag == "Player"){
+                transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                GetComponent<PlayerController>().enabled = false;
+                GetComponent<CircleCollider2D>().enabled = false;
+            }
+            else{
+                GetComponent<EnemyControler>().Die();
+            }
 		}
     }
-
-   
 }

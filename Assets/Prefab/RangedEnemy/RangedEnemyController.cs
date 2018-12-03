@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class RangedEnemyController : MonoBehaviour
+public class RangedEnemyController : EnemyControler
 {
 
     //this enemies target
@@ -242,5 +242,10 @@ public class RangedEnemyController : MonoBehaviour
     public enum RangedEnemyState
     {
         IDLE, CHASING, ATTACKING
+    }
+
+    public override void Die(){
+        GetComponent<RangedEnemyController>().enabled = false;
+        GetComponent<CircleCollider2D>().isTrigger = true;
     }
 }
