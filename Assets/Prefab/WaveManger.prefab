@@ -77,9 +77,19 @@ MonoBehaviour:
       number: 6
     - enemy: {fileID: 1712397815999870, guid: ba2696fa7d70cb84785937136d79570c, type: 2}
       number: 6
+  - enemies:
+    - enemy: {fileID: 1712397815999870, guid: 6d064c267964a6d40923ed6cb74af3f1, type: 2}
+      number: 6
+    - enemy: {fileID: 1712397815999870, guid: ba2696fa7d70cb84785937136d79570c, type: 2}
+      number: 6
+    - enemy: {fileID: 1967923648441000, guid: bb7cb02fcff51460ba8817318a8546cc, type: 2}
+      number: 2
   doAfterLastWave:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   nextScene: MainMenu
+  door: {fileID: 0}
+  bosstext: {fileID: 0}
+  endlessmode: 1
