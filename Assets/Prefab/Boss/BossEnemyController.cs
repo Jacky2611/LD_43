@@ -1,7 +1,6 @@
 ﻿using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class BossEnemyController : EnemyControler
@@ -193,11 +192,8 @@ public class BossEnemyController : EnemyControler
     void Rotate()
     {
 
-        Debug.Log("Rotating");
-
         direction = direction.normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg ;
-        Debug.Log("Rotating to"+angle);
 
         transform.rotation = Quaternion.Euler(new Vector3(0,0,angle+90));
     }
