@@ -45,6 +45,7 @@ public class LivingEntity : MonoBehaviour {
                 transform.GetChild(1).GetComponent<ParticleSystem>().Play();
                 GetComponent<PlayerController>().enabled = false;
                 GetComponent<CircleCollider2D>().enabled = false;
+                Invoke("Reload", 3);
             }
             else
             {
@@ -53,6 +54,9 @@ public class LivingEntity : MonoBehaviour {
 
             }
         }
+    }
+    public void Reload(){
+        Application.LoadLevelAsync("Level");
     }
 
     public void LooseHealth(float healthLoss)

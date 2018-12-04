@@ -56,6 +56,12 @@ public class WaveManager : MonoBehaviour {
 
 	}
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadSceneAsync("Level");
+    }
+
     void NextWave()
     {
         if(currentWave == waves.Length && !endlessmode)
