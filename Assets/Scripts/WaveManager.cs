@@ -28,6 +28,11 @@ public class WaveManager : MonoBehaviour {
     public Tile door;
     public GameObject bosstext;
 
+    [Header("If this is true new waves will be proceduraly generated:")]
+    public bool endlessmode = true;
+    private int curAdditionalEnemies = 2;
+    private int moreAdditionalEnemies = 2;
+
     // Use this for initialization
     void Start () {
         spawnLocations = GameObject.FindGameObjectsWithTag("Respawn");
@@ -53,11 +58,33 @@ public class WaveManager : MonoBehaviour {
 
     void NextWave()
     {
-        if(currentWave == waves.Length)
+        if(currentWave == waves.Length && !endlessmode)
         {
-            wavesOngoing = false;
-            DefeatedLastWave();
-            return;
+            if (!endlessmode){
+                wavesOngoing = false;
+                DefeatedLastWave();
+                return;
+            }
+
+            Wave w1 = waves[waves.Length-1];
+
+            foreach (Enemies enemies in w1.enemies)
+            {
+                for (int i = 0; i < enemies.number+curAdditionalEnemies; i++)
+                {
+                    List<GameObject> viableSpawnLocation = new List<GameObject>();//[spawnLocations.];// = spawnLocations.
+                    viableSpawnLocation.AddRange(spawnLocations);
+                    viableSpawnLocation.RemoveAll(location => Vector3.Distance(location.transform.position, player.transform.position) < 10);
+
+                    //System.Array.Copy(spawnLocations,viableSpawnLocation,spawnLocations.Length);
+                    Vector3 pos = viableSpawnLocation[Random.Range(0, viableSpawnLocation.Count - 1)].transform.position;
+                    GameObject go = Instantiate(enemies.enemy, pos, new Quaternion());
+                    spawnedEnemies.Add(go);
+                }
+            }
+
+
+            curAdditionalEnemies += moreAdditionalEnemies;
         }
 
         Wave w = waves[currentWave];
