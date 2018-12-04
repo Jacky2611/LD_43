@@ -245,5 +245,6 @@ public class MeleeEnemyController : EnemyControler
         GetComponent<CircleCollider2D>().isTrigger = true;
         GetComponent<Rigidbody2D>().angularVelocity = 0;
         GetComponent<Rigidbody2D>().velocity = new Vector2();
+        GetComponent<SpriteRenderer>().sortingLayerName = "Walls";
     }
 }

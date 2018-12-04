@@ -156,9 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e79f4f148f6430459afb7e3a716b336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 15
   lifetime: 50
   maxBounceCounter: 4
+  power: 100
   effect: {fileID: 1426903067973746, guid: cec5a8f981a36485a8ffc38e3d08f99c, type: 2}
 --- !u!212 &212950029087179288
 SpriteRenderer:

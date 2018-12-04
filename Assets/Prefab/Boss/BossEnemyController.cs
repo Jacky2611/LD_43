@@ -37,7 +37,7 @@ public class BossEnemyController : EnemyControler
     void Awake()
     {
         direction = new Vector2(1, 0);
-        animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponentInChildren<Animator>();
         seeker = gameObject.GetComponent<Seeker>();
     }
 

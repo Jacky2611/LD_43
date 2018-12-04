@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour {
@@ -16,14 +17,16 @@ public class WaveManager : MonoBehaviour {
 
     bool wavesOngoing;
 
-
-
     GameObject[] spawnLocations;
     GameObject player;
 
     public UnityEvent doAfterLastWave;
     [Header("If no custom action is picked a Scene with this name will be loaded:")]
     public String nextScene;
+
+    //things that do not belong
+    public Tile door;
+    public GameObject bosstext;
 
     // Use this for initialization
     void Start () {
@@ -78,7 +81,21 @@ public class WaveManager : MonoBehaviour {
         currentWave++;
     }
 
+    public void CloseGate()
+    {
+        Tilemap t = GameObject.Find("TilemapWalls").GetComponent<Tilemap>();
+        t.SetTile(new Vector3Int(28, -3, 0), door);
+    }
 
+    public void OpenGate(){
+        Tilemap t = GameObject.Find("TilemapWalls").GetComponent<Tilemap>();
+        t.SetTile(new Vector3Int(28, -3, 0), null);
+        bosstext.SetActive(true);
+        Invoke("RemoveText", 5);
+    }
+    public void RemoveText(){
+        bosstext.SetActive(false);
+    }
     void DefeatedLastWave()
     {
         Debug.Log("Defeated Last Wave");
