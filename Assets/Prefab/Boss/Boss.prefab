@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4767274008922260}
   - component: {fileID: 212612901539001952}
-  - component: {fileID: 95898602600567576}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -75,6 +74,7 @@ GameObject:
   - component: {fileID: 114749551568456630}
   - component: {fileID: 114474321404155380}
   - component: {fileID: 114366991935679106}
+  - component: {fileID: 95217694305604624}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Untagged
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967923648441000}
   m_LocalRotation: {x: 0, y: 0, z: -0.06453212, w: 0.9979156}
-  m_LocalPosition: {x: 46.800247, y: -3.3629844, z: -0.4}
+  m_LocalPosition: {x: 24.398836, y: -5.118538, z: -0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4473025504611072}
@@ -202,13 +202,13 @@ PolygonCollider2D:
       - {x: -0.39760494, y: 0.40705073}
       - {x: -0.14123297, y: 0.25357234}
       - {x: 0.23626351, y: 0.2809931}
---- !u!95 &95898602600567576
+--- !u!95 &95217694305604624
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1674705237226496}
+  m_GameObject: {fileID: 1967923648441000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 2cdfbeec8dfd04f0da7d572735131f0d, type: 2}
@@ -305,7 +305,7 @@ MonoBehaviour:
   repathRate: 0.8
   state: 0
   direction: {x: 0, y: 0}
-  playerDetectionRange: 120
+  playerDetectionRange: 200
   attackRange: 1
 --- !u!114 &114800394712220176
 MonoBehaviour:
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a88afe1b0688d498242497dddca41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  maxHealth: 140
   health: 0
   hurtSounds:
   - {fileID: 8300000, guid: 374cdec51e12d574fb84b16e37480022, type: 3}
